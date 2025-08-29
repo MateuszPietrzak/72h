@@ -3,9 +3,14 @@ package pages
 import "github.com/MateuszPietrzak/72h/templates/components"
 
 templ hero() {
-	<h1 class="text-9xl font-bold font-header">72 godziny</h1>
-	<h2 class="text-5xl font-bold">Innowacja w edukacji o bezpieczeństwie</h2>
-	@components.Button("Dowiedz się więcej")
+	<div class="h-full">
+		<img src="./static/images/banner.png" class="absolute top-0 z-[-10] h-full min-w-full object-cover"/>
+		<div class="h-full flex flex-col justify-center pl-32 gap-6 items-start">
+			<h2 class="text-2xl font-bold font-header text-white">{ "// 54º 30' 42.124\" N 18º 31' 58.923\" E " } </h2>
+			<h1 class="text-8xl font-semibold font-header text-white">72 godziny</h1>
+			<button class="bg-white text-black font-bold px-8 py-5 mt-3 cursor-pointer">DOWIEDZ SIĘ WIĘCEJ</button>
+		</div>
+	</div>
 }
 
 templ Home() {
@@ -16,9 +21,11 @@ templ Home() {
 			@components.StyleSetup()
 		</head>
 		<body>
-			@hero()
-			<img src="./static/images/72h_logo.svg"/>
-			<i class="fa-solid fa-hippo"></i>
+			<div class="flex flex-col h-screen">
+				@components.Navbar()
+				@hero()
+			</div>
+			This is text further down
 		</body>
 	</html>
 }

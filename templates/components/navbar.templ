@@ -1,0 +1,19 @@
+package components
+
+templ navbarButton(text string) {
+	<button class="cursor-pointer">
+		{ text }
+	</button>
+}
+
+templ Navbar() {
+	<div class="flex flex-row justify-between w-full px-8 py-4 bg-white items-center">
+		<img src="./static/images/72h_logo.svg"/>
+		<div class="flex flex-row font-bold gap-24">
+			@navbarButton("APLIKACJA")
+			@navbarButton("EDUKACJA")
+			@navbarButton("TECH CAMPY")
+			@Button("SCENARIUSZE LEKCJI")
+		</div>
+	</div>
+}
