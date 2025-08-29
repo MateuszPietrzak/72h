@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-t-purple: #4F1787;
+    --color-t-pink: #E4003A;
+    --color-t-orange: #FF4800;
+    --color-t-gold: #FFB200;
+    --color-t-yellow: #FFFB73;
+
+    --font-header: 'Fira Code', monospace;
+}
+
+@layer utilities {
+    .bg-conic-purple-pink {
+        background-image: conic-gradient(at 50% -10%,
+                theme(color-t-pink),
+                theme(color-t-purple));
+    }
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
