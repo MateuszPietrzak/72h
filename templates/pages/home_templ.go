@@ -31,14 +31,14 @@ func hero() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"h-full\"><img src=\"./static/images/banner.png\" class=\"absolute top-0 z-[-10] h-full min-w-full object-cover\"><div class=\"h-full flex flex-col justify-center pl-32 gap-6 items-start\"><h2 class=\"text-2xl font-bold font-header text-white\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"h-full\"><video autoplay preload=\"none\" loop muted playsinline disablePictureInPicture poster=\"./static/banner.png\" tabindex=\"-1\" aria-hidden class=\"absolute top-0 z-[-10] h-full min-w-full object-cover\"><source src=\"./static/videos/banner.mp4\" type=\"video/mp4\"></video><div class=\"h-full flex flex-col justify-center pl-32 gap-6 items-start\"><h2 class=\"text-2xl font-bold font-header text-white\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs("// 54º 30' 42.124\" N 18º 31' 58.923\" E ")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 9, Col: 104}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/pages/home.templ`, Line: 22, Col: 104}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {

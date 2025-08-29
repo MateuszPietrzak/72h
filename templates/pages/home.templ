@@ -4,7 +4,20 @@ import "github.com/MateuszPietrzak/72h/templates/components"
 
 templ hero() {
 	<div class="h-full">
-		<img src="./static/images/banner.png" class="absolute top-0 z-[-10] h-full min-w-full object-cover"/>
+		<video
+			autoplay
+			preload="none"
+			loop
+			muted
+			playsinline
+			disablePictureInPicture
+			poster="./static/banner.png"
+			tabindex="-1"
+			aria-hidden
+			class="absolute top-0 z-[-10] h-full min-w-full object-cover"
+		>
+			<source src="./static/videos/banner.mp4" type="video/mp4"/>
+		</video>
 		<div class="h-full flex flex-col justify-center pl-32 gap-6 items-start">
 			<h2 class="text-2xl font-bold font-header text-white">{ "// 54º 30' 42.124\" N 18º 31' 58.923\" E " } </h2>
 			<h1 class="text-8xl font-semibold font-header text-white">72 godziny</h1>

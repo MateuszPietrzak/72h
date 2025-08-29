@@ -258,6 +258,9 @@
   .gap-24 {
     gap: calc(var(--spacing) * 24);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-green-50 {
     background-color: var(--color-green-50);
   }
