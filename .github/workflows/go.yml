@@ -1,0 +1,50 @@
+name: Go
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.24.4'
+
+    - name: Install Templ
+      run: go install github.com/a-h/templ/cmd/templ@latest
+
+    - name: Download Tailwind CSS standalone binary
+      run: |
+        curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
+        chmod +x tailwindcss-linux-x64
+        mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss
+    
+    - name: Verify Tailwind installation
+      run: tailwindcss --help
+    
+    - name: Generate templ files
+      run: templ generate
+    
+    - name: Build production CSS
+      run: |
+        tailwindcss -i ./input.css -o ./static/styles.css --minify
+    
+    - name: Build Go binary
+      run: |
+        go build -v -o app -ldflags="-s -w" .
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: production-build
+        path: |
+          app
+          static/
+        retention-days: 7
