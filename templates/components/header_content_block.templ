@@ -1,0 +1,17 @@
+package components
+
+templ HeaderContentBlock(slogan string, header_main string, header string, content string) {
+	<div class="flex flex-row justify-between px-[10%] min-w-[100%]">
+		<div class="flex flex-col min-w-[55%] gap-12">
+			<span class="text-[19px] font-semibold">{ slogan }</span>
+			<div class="flex flex-row gap-12">
+				<img src="./static/images/gradient_long_header.png"/>
+				<span class="text-[60px] font-bold whitespace-pre-line">{ header_main }</span>
+			</div>
+		</div>
+		<div class="flex flex-col max-w-[45%] py-30 gap-4">
+			<span class="text-[30px] font-bold">{ header }</span>
+			<span class="text-[24px] font-medium">{ content }</span>
+		</div>
+	</div>
+}

@@ -1,25 +1,33 @@
 package components
 
-templ navbarButton(text string) {
-	<a class="cursor-pointer px-8 py-5 hover:bg-black hover:text-white transition-all duration-300">
+templ navbarButton(text string, url string) {
+	<a
+		href={ url }
+		class="cursor-pointer px-8 py-5 hover:bg-black hover:text-white transition-all duration-300"
+	>
 		{ text }
 	</a>
 }
 
-templ navbarButtonFancy(text string) {
-	<a class="cursor-pointer bg-conic-purple-pink text-white px-8 py-5 hover:bg-white hover:text-black hover:bg-none transition-all duration-300">
+templ navbarButtonFancy(text string, url string) {
+	<a
+		href={ url }
+		class="cursor-pointer bg-cover bg-[url(./images/scenariusze_button_bg.png)] text-white px-8 py-5 hover:bg-white hover:text-black hover:bg-none transition-all duration-300"
+	>
 		{ text }
 	</a>
 }
 
 templ Navbar() {
 	<div class="flex flex-row justify-between w-full px-8 py-4 bg-white items-center">
-		<img src="./static/images/logo.svg"/>
+		<a href="/" class="cursor-pointer">
+			<img src="./static/images/logo.svg"/>
+		</a>
 		<div class="flex flex-row font-bold gap-16 items-center">
-			@navbarButton("APLIKACJA")
-			@navbarButton("EDUKACJA")
-			@navbarButton("TECH CAMPY")
-			@navbarButtonFancy("SCENARIUSZE LEKCJI")
+			@navbarButton("APLIKACJA", "/")
+			@navbarButton("EDUKACJA", "/")
+			@navbarButton("TECH CAMPY", "/tech_campy")
+			@navbarButtonFancy("SCENARIUSZE LEKCJI", "/")
 		</div>
 	</div>
 }

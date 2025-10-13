@@ -11,14 +11,6 @@
     --font-header: 'Fira Code', monospace;
 }
 
-@layer utilities {
-    .bg-conic-purple-pink {
-        background-image: conic-gradient(at 50% -10%,
-                theme(color-t-pink),
-                theme(color-t-purple));
-    }
-}
-
 html {
     font-family: 'Inter', sans-serif;
 }

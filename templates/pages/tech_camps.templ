@@ -1,0 +1,24 @@
+package pages
+
+import "github.com/MateuszPietrzak/72h/templates/components"
+
+templ TechCamps() {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>72 Godziny</title>
+			@components.StyleSetup()
+		</head>
+		<body>
+			@components.Navbar()
+			@components.HeaderContentBlock("Tech Campy - Trening Praktyczny",
+				"Przygoda\ni technologia",
+				"Autorskie szkolenie łączy survival z nowoczesnymi narzędziami.",
+				`Uczestnicy uczą się poruszania w terenie, czytania map oraz korzystania z 
+                innowacyjnych technologii - Starlinka, który zapewnia łączność satelitarną, 
+                i dronów, wspierających rozpoznanie oraz orientację. Dzięki specjalnie przygotowanym 
+                scenariuszom zdobywają praktyczne doświadczenie i kompetencje kryzysowe potrzebne w 
+                dzisiejszym świecie.`)
+		</body>
+	</html>
+}
