@@ -11,14 +11,46 @@ templ TechCamps() {
 		</head>
 		<body>
 			@components.Navbar()
-			@components.HeaderContentBlock("Tech Campy - Trening Praktyczny",
-				"Przygoda\ni technologia",
-				"Autorskie szkolenie łączy survival z nowoczesnymi narzędziami.",
-				`Uczestnicy uczą się poruszania w terenie, czytania map oraz korzystania z 
-                innowacyjnych technologii - Starlinka, który zapewnia łączność satelitarną, 
-                i dronów, wspierających rozpoznanie oraz orientację. Dzięki specjalnie przygotowanym 
-                scenariuszom zdobywają praktyczne doświadczenie i kompetencje kryzysowe potrzebne w 
-                dzisiejszym świecie.`)
+			<div class="flex flex-col gap-16">
+				@components.HeaderContentBlock("Tech Campy - Trening Praktyczny",
+					"Przygoda\ni technologia",
+					"Autorskie szkolenie łączy survival z nowoczesnymi narzędziami.",
+					`Uczestnicy uczą się poruszania w terenie, czytania map oraz korzystania z 
+					innowacyjnych technologii - Starlinka, który zapewnia łączność satelitarną, 
+					i dronów, wspierających rozpoznanie oraz orientację. Dzięki specjalnie przygotowanym 
+					scenariuszom zdobywają praktyczne doświadczenie i kompetencje kryzysowe potrzebne w 
+					dzisiejszym świecie.`)
+				<img src="./static/images/photo_1.png" class="w-full min-w-full max-w-full"/>
+				@components.HeaderContentBlock("Technologie",
+					"Obsługa dronów\ni technologie\nStarlink",
+					"Drony komercyjne stanowią integralny element praktycznych ćwiczeń. ",
+					`Uczestnicy programu, oprócz podstawowej nauki obsługi drona, będą wykorzystywać je 
+					w grach terenowych do rozpoznawania przeszkód, poszukiwania osób i obiektów oraz 
+					przesyłania obrazu na żywo. Uczestnicy nauczą się wykorzystywać Starlink jako narzędzie 
+					zapewniające dostęp do internetu oraz awaryjną łączność w miejscach pozbawionych 
+					zasięgu GSM. Specjalnie zaprojektowane ćwiczenia i symulacje kryzysowe pozwolą uczestnikom 
+					sprawdzić zdobytą wiedzę w praktyce. To okazja, by w realistycznych warunkach rozwijać refleks, 
+					współpracę i odporność. Celem szkolenia jest lepsza koordynacja działań i zdobycie kompetencji, 
+					które naprawdę liczą się w obliczu kryzysu.`)
+				<img src="./static/images/photo_2.png" class="w-full min-w-full max-w-full"/>
+				@components.HeaderContentBlock("Kompetencje",
+					"Team work\ni survival",
+					"Współpraca i nauka przetrwania w terenie to podstawa skutecznego działania w kryzysie.",
+					`Uczestnicy przekonają się, że dobrze zgrana grupa potrafi szybciej reagować, sprawniej 
+					rozwiązywać problemy i w pełni wykorzystywać unikalne talenty swoich członków. Doświadczą, 
+					że w sytuacjach trudnych to właśnie zespół daje poczucie bezpieczeństwa i zwiększa szanse 
+					na sukces. Nauka przetrwania w terenie jest integralną częścią rozwijania kompetencji 
+					kryzysowych. Młodzież, poprzez praktyczne ćwiczenia i realistyczne symulacje, zdobędzie 
+					doświadczenie, wzmocni samodzielność, umiejetność współpracy odporność psychiczną oraz 
+					zdolność do radzenia sobie w trudnych warunkach.`)
+				<img src="./static/images/photo_3.png" class="w-full min-w-full max-w-full"/>
+				@components.HeaderContentBlock("Lokalizacja i kontakt",
+					"Lokalizacja",
+					`TechCampy w ramach projektu "72h" będą organizowane wyłącznie w placówkach przeszkolonych 
+					przez zespół certyfikowanych ekspertów. Zapewni to najwyższe standardy bezpieczeństwa 
+					oraz jakość prowadzonych zajęć.`,
+					"")
+			</div>
 		</body>
 	</html>
 }
