@@ -1,0 +1,21 @@
+package components
+
+import "strings"
+import "fmt"
+
+templ HeaderContentBlock(slogan string, header_main string, header string, content string) {
+	{{ header_lines_number := strings.Count(header_main, "\n") + 1 }}
+	<div class="flex flex-row justify-between px-[10%] min-w-[100%]">
+		<div class="flex flex-col min-w-[55%] gap-12">
+			<span class="text-[19px] font-semibold">{ slogan }</span>
+			<div class="flex flex-row gap-12">
+				<img src={ fmt.Sprintf("./static/images/gradient_header_%d_lines.png", header_lines_number) }/>
+				<span class="text-[60px] font-bold whitespace-pre-line">{ header_main }</span>
+			</div>
+		</div>
+		<div class="flex flex-col max-w-[45%] pt-[7rem] gap-4">
+			<span class="text-[30px] font-bold">{ header }</span>
+			<span class="text-[24px] font-medium">{ content }</span>
+		</div>
+	</div>
+}

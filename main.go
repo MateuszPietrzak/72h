@@ -29,8 +29,10 @@ func main() {
 			http.StripPrefix("/static/", fs)))
 
 	home := pages.Home()
+	tech_camps := pages.TechCamps()
 
 	http.Handle("/", templ.Handler(home))
+	http.Handle("/tech_campy", templ.Handler(tech_camps))
 
 	fmt.Println("Listening on :8080")
 	http.ListenAndServe(":8080", nil)
