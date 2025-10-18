@@ -1,0 +1,53 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download artifact from Build
+      uses: actions/download-artifact@v4
+      with:
+        name: production-build
+
+    - name: Connect to Cloudflare WARP
+      uses: oHTGo/setup-cloudflare-warp-action@master
+      with:
+        organization: drabart
+        auth-client-id: ${{ secrets.AUTH_CLIENT_ID }}
+        auth-client-secret: ${{ secrets.AUTH_CLIENT_SECRET }}
+
+    - name: Verify WARP connection
+      run: |
+        echo "Testing WARP connection..."
+        curl https://cloudflare.com/cdn-cgi/trace || true
+
+    - name: Deploy to home server via SSH
+      env:
+        # SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        REMOTE_HOST: 192.168.50.20
+        REMOTE_USER: drabart
+        REMOTE_PATH: /home/drabart/72h
+      run: |
+        mkdir -p ~/.ssh
+        # echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        # chmod 600 ~/.ssh/id_ed25519
+        # ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
+
+        scp production-build.zip $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/production-build.zip
+
+        ssh $REMOTE_USER@$REMOTE_HOST << 'EOF'
+          cd /home/drabart/72h
+          unzip -o production-build.zip
+          # pkill app || true
+          # nohup ./app > app.log 2>&1 &
+        EOF
