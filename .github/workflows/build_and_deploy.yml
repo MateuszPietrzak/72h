@@ -60,7 +60,7 @@ jobs:
         name: production-build
 
     - name: Connect to Cloudflare WARP
-      uses: oHTGo/setup-cloudflare-warp-action@master
+      uses: Boostport/setup-cloudflare-warp-action@v1
       with:
         organization: drabart
         auth-client-id: ${{ secrets.AUTH_CLIENT_ID }}
