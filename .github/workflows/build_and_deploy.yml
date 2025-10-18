@@ -60,11 +60,11 @@ jobs:
         name: production-build
 
     - name: Connect to Cloudflare WARP
-      uses: Boostport/setup-cloudflare-warp-action@v1
+      uses: Boostport/setup-cloudflare-warp@v1
       with:
         organization: drabart
-        auth-client-id: ${{ secrets.AUTH_CLIENT_ID }}
-        auth-client-secret: ${{ secrets.AUTH_CLIENT_SECRET }}
+        auth_client_id: ${{ secrets.AUTH_CLIENT_ID }}
+        auth_client_secret: ${{ secrets.AUTH_CLIENT_SECRET }}
 
     - name: Verify WARP connection
       run: |
