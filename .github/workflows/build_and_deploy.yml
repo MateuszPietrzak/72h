@@ -5,6 +5,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch: {}
 
 jobs:
   build:
@@ -68,8 +69,8 @@ jobs:
 
     - name: Verify WARP connection
       run: |
-        echo "Testing WARP connection..."
-        curl https://cloudflare.com/cdn-cgi/trace || true
+        warp-cli --accept-tos status
+        warp-cli status
 
     - name: Deploy to home server via SSH
       env:
