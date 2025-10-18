@@ -66,8 +66,6 @@ jobs:
         organization: drabart
         auth-client-id: ${{ secrets.AUTH_CLIENT_ID }}
         auth-client-secret: ${{ secrets.AUTH_CLIENT_SECRET }}
-      run: |
-
 
     - name: Verify WARP connection
       run: |
