@@ -7,7 +7,6 @@ on:
       - master
     types: 
       - completed
-  workflow_dispatch: {}
 
 jobs:
   deploy:
