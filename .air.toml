@@ -4,6 +4,7 @@ tmp_dir = "tmp"
 [env]
   ENV = "dev"
   HTTP_PORT = "8080"
+  UNIX_SOCKET = ""
 
 [build]
   bin = "./tmp/main"
