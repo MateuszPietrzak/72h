@@ -1,6 +1,10 @@
 root = "."
 tmp_dir = "tmp"
 
+[env]
+  ENV = "dev"
+  HTTP_PORT = "8080"
+
 [build]
   bin = "./tmp/main"
   cmd = "templ generate && go build -o ./tmp/main ."
