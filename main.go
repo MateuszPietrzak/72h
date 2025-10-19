@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
+	"net"
 	"net/http"
+	"os"
 
 	"github.com/MateuszPietrzak/72h/templates/pages"
 	"github.com/a-h/templ"
 )
 
-var dev = true
+var dev = os.Getenv("ENV") != "production"
 
 func disableCacheInDevMode(next http.Handler) http.Handler {
 	if !dev {
@@ -28,12 +30,28 @@ func main() {
 		disableCacheInDevMode(
 			http.StripPrefix("/static/", fs)))
 
-	home := pages.Home()
-	tech_camps := pages.TechCamps()
+	http.Handle("/", templ.Handler(pages.Home()))
+	http.Handle("/tech_campy", templ.Handler(pages.TechCamps()))
 
-	http.Handle("/", templ.Handler(home))
-	http.Handle("/tech_campy", templ.Handler(tech_camps))
+	socketPath := os.Getenv("UNIX_SOCKET")
+	useSocket := socketPath != ""
+	if useSocket {
+		os.Remove(socketPath)
 
-	fmt.Println("Listening on :8080")
-	http.ListenAndServe(":8080", nil)
+		listener, err := net.Listen("unix", socketPath)
+		if err != nil {
+			panic(err)
+		}
+		defer listener.Close()
+
+		fmt.Println("Listening on Unix socket", socketPath)
+		http.Serve(listener, nil)
+	} else {
+		port := os.Getenv("HTTP_PORT")
+		if port == "" {
+			port = "8080"
+		}
+		fmt.Println("Listening on port", port)
+		http.ListenAndServe(":"+port, nil)
+	}
 }
