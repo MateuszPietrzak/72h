@@ -40,14 +40,14 @@ jobs:
       run: |
         go build -v -o app -ldflags="-s -w" .
 
-    - name: Upload build artifacts
+    - name: Create zip archive
+      run: zip -r production-build.zip app static/
+
+    - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: production-build
         path: production-build.zip
-        path: |
-          app
-          static/
         retention-days: 7
 
   deploy:
