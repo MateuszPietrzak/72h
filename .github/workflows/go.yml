@@ -44,6 +44,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: production-build
+        path: production-build.zip
         path: |
           app
           static/
@@ -73,7 +74,7 @@ jobs:
 
         scp production-build.zip $REMOTE_USER@$REMOTE_HOST:~/production-build.zip
 
-        ssh $REMOTE_USER@$REMOTE_HOST << 'EOF'
+        ssh $REMOTE_USER@$REMOTE_HOST << EOF
           rm app
           rm static/ -fr
           unzip -o production-build.zip
