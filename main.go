@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net"
 	"net/http"
 	"os"
@@ -33,6 +34,11 @@ func main() {
 	http.Handle("/", templ.Handler(pages.Home()))
 	http.Handle("/tech_campy", templ.Handler(pages.TechCamps()))
 
+	h := func(w http.ResponseWriter, _ *http.Request) {
+		io.WriteString(w, "Pong!")
+	}
+	http.HandleFunc("/ping", h)
+
 	socketPath := os.Getenv("UNIX_SOCKET")
 	useSocket := socketPath != ""
 	if useSocket {
@@ -43,6 +49,8 @@ func main() {
 			panic(err)
 		}
 		defer listener.Close()
+
+		os.Chmod(socketPath, 0660)
 
 		fmt.Println("Listening on Unix socket", socketPath)
 		http.Serve(listener, nil)
