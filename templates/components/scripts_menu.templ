@@ -7,13 +7,22 @@ type menuArg struct {
 
 templ menuEntry(title string, items []menuArg) {
 	<div class="module-element">
-		<button class="toggle-button cursor-pointer text-lg">
-			{ title }
+		<button class="toggle-button cursor-pointer text-xl w-full hover:bg-white hover:text-black flex flex-row justify-between gap-5 font-header font-semibold p-2">
+			<span>
+				{ title }
+			</span>
+			<span>
+				<i class="chevron-icon fa-solid fa-chevron-down fa-md"></i>
+			</span>
 		</button>
 		<div class="expanded-content">
 			<ul>
 				for _, item := range items {
-					<li>{ item.Text } { item.Href }</li>
+					<a href={ item.Href }>
+						<li class="ml-6 text-lg hover:bg-white hover:text-black p-1">
+							{ item.Text }
+						</li>
+					</a>
 				}
 			</ul>
 		</div>
@@ -48,11 +57,23 @@ templ ScriptsMenu() {
 					<i class="fa-solid fa-xmark fa-xl"></i>
 				</button>
 			</div>
-			@menuEntry("Item 1", []menuArg{
+			@menuEntry("ZARZĄDZANIE STRESEM", []menuArg{
 				{Text: "Item 1", Href: "link1"},
 				{Text: "Item 2", Href: "link2"},
 				{Text: "Item 3", Href: "link3"}})
-			@menuEntry("Item 2", []menuArg{
+			@menuEntry("BUDOWANIE ZESPOŁU", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("BEZPIECZEŃSTWO INFORMACJI", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("DZIAŁANIE W KRYZYSIE", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("WOJNA KOGNITYWNA", []menuArg{
 				{Text: "Item 1", Href: "link1"},
 				{Text: "Item 2", Href: "link2"},
 				{Text: "Item 3", Href: "link3"}})
@@ -81,11 +102,14 @@ templ ScriptsMenu() {
         document.querySelectorAll(".module-element").forEach((container, key) => {
             const button = container.querySelector(".toggle-button");
             const content = container.querySelector(".expanded-content");
+            const chevron = container.querySelector(".chevron-icon");
 
             content.style.display = "none";
 
             function toggleItems(show) {
                 content.style.display = show ? "block" : "none";
+                chevron.classList.remove(show ? "fa-chevron-down" : "fa-chevron-up");
+                chevron.classList.add(!show ? "fa-chevron-down" : "fa-chevron-up");
             }
             moduleList.push(toggleItems);
 
