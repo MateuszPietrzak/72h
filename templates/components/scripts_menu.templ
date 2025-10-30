@@ -1,5 +1,25 @@
 package components
 
+type menuArg struct {
+	Text string
+	Href string
+}
+
+templ menuEntry(title string, items []menuArg) {
+	<div class="module-element">
+		<button class="toggle-button cursor-pointer text-lg">
+			{ title }
+		</button>
+		<div class="expanded-content">
+			<ul>
+				for _, item := range items {
+					<li>{ item.Text } { item.Href }</li>
+				}
+			</ul>
+		</div>
+	</div>
+}
+
 templ ScriptsMenu() {
 	<div class="absolute ml-6 mt-6 bg-black p-4">
 		<button
@@ -28,30 +48,14 @@ templ ScriptsMenu() {
 					<i class="fa-solid fa-xmark fa-xl"></i>
 				</button>
 			</div>
-			<div class="module-element">
-				<button class="toggle-button cursor-pointer text-lg">
-					Item 1
-				</button>
-				<div class="expanded-content">
-					<ul>
-						<li>Item 1</li>
-						<li>Item 2</li>
-						<li>Item 3</li>
-					</ul>
-				</div>
-			</div>
-			<div class="module-element">
-				<button class="toggle-button cursor-pointer text-lg">
-					Item 2
-				</button>
-				<div class="expanded-content">
-					<ul>
-						<li>Item 1</li>
-						<li>Item 2</li>
-						<li>Item 3</li>
-					</ul>
-				</div>
-			</div>
+			@menuEntry("Item 1", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("Item 2", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
 		</div>
 	</div>
 	<script>
