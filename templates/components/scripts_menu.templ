@@ -72,24 +72,32 @@ templ ScriptsMenu() {
             }
         }
 
-        document.querySelectorAll(".module-element").forEach(container => {
+        const moduleList = [];
+
+        document.querySelectorAll(".module-element").forEach((container, key) => {
             const button = container.querySelector(".toggle-button");
             const content = container.querySelector(".expanded-content");
 
             content.style.display = "none";
-            let isShown = false;
 
-            function toggleItems() {
-                if (isShown) {
-                    content.style.display = "none";
-                    isShown = false;
-                } else {
-                    content.style.display = "block";
-                    isShown = true;
+            function toggleItems(show) {
+                content.style.display = show ? "block" : "none";
+            }
+            moduleList.push(toggleItems);
+
+            function onClick() {
+                for (let i = 0; i < moduleList.length; i++) {
+                    if (i === key) {
+                        moduleList[i](content.style.display === "none");
+                    } else {
+                        moduleList[i](false);
+                    }
                 }
             }
+            button.addEventListener("click", onClick);
+        });
 
-            button.addEventListener("click", toggleItems);
-        })
+        moduleList[0](true);
+
     </script>
 }
