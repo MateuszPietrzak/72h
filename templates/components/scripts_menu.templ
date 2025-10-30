@@ -1,0 +1,95 @@
+package components
+
+templ ScriptsMenu() {
+	<div class="absolute ml-6 mt-6 bg-black p-4">
+		<button
+			id="contentHidden"
+			class="text-white bg-black p-4 hover:text-black hover:bg-white cursor-pointer"
+			style="display: none"
+			onClick="toggleVisibility()"
+		>
+			<i class="fa-solid fa-chevron-right fa-xl"></i>
+		</button>
+		<div
+			id="contentShown"
+			class="text-white flex flex-col gap-8"
+			style="display: block"
+		>
+			<div class="flex flex-row justify-between">
+				<span
+					class="p-4 text-2xl font-semibold font-header"
+				>
+					MODUŁY
+				</span>
+				<button
+					class="p-4 hover:text-black hover:bg-white cursor-pointer"
+					onClick="toggleVisibility()"
+				>
+					<i class="fa-solid fa-xmark fa-xl"></i>
+				</button>
+			</div>
+			<div class="module-element">
+				<button class="toggle-button cursor-pointer text-lg">
+					Item 1
+				</button>
+				<div class="expanded-content">
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ul>
+				</div>
+			</div>
+			<div class="module-element">
+				<button class="toggle-button cursor-pointer text-lg">
+					Item 2
+				</button>
+				<div class="expanded-content">
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+        let isShown = true;
+
+        const elemHidden = document.getElementById("contentHidden");
+        const elemShown = document.getElementById("contentShown");
+
+        function toggleVisibility() {
+            if (isShown) {
+                elemHidden.style.display = "block";
+                elemShown.style.display = "none";
+                isShown = false;
+            } else {
+                elemHidden.style.display = "none";
+                elemShown.style.display = "block";
+                isShown = true;
+            }
+        }
+
+        document.querySelectorAll(".module-element").forEach(container => {
+            const button = container.querySelector(".toggle-button");
+            const content = container.querySelector(".expanded-content");
+
+            content.style.display = "none";
+            let isShown = false;
+
+            function toggleItems() {
+                if (isShown) {
+                    content.style.display = "none";
+                    isShown = false;
+                } else {
+                    content.style.display = "block";
+                    isShown = true;
+                }
+            }
+
+            button.addEventListener("click", toggleItems);
+        })
+    </script>
+}

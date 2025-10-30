@@ -30,8 +30,10 @@ func main() {
 
 	home := pages.Home()
 	tech_camps := pages.TechCamps()
+	scripts_home := pages.ScriptsHome()
 
 	http.Handle("/", templ.Handler(home))
+	http.Handle("/scenariusze", templ.Handler(scripts_home))
 	http.Handle("/tech_campy", templ.Handler(tech_camps))
 
 	fmt.Println("Listening on :8080")
