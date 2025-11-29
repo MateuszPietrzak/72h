@@ -1,0 +1,17 @@
+package pages
+
+import "github.com/MateuszPietrzak/72h/templates/components"
+
+templ Script(child string) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>72 Godziny</title>
+			@components.StyleSetup()
+		</head>
+		<body>
+			@components.Navbar()
+			@templ.Raw(child)
+		</body>
+	</html>
+}
