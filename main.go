@@ -32,6 +32,7 @@ func main() {
 			http.StripPrefix("/static/", fs)))
 
 	http.Handle("/", templ.Handler(pages.Home()))
+	http.Handle("/scenariusze", templ.Handler(pages.ScriptsHome()))
 	http.Handle("/tech_campy", templ.Handler(pages.TechCamps()))
 	http.Handle("/o_nas", templ.Handler(pages.AboutUs()))
 

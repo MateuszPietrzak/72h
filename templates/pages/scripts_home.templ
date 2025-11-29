@@ -1,0 +1,33 @@
+package pages
+
+import "github.com/MateuszPietrzak/72h/templates/components"
+
+templ ScriptsHome() {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>72 Godziny</title>
+			@components.StyleSetup()
+		</head>
+		<body>
+			@components.Navbar()
+			@components.ScriptsMenu()
+			<div class="flex flex-col gap-16">
+				@components.HeaderContentBlock("Scenariusze lekcji",
+					"Scenariusze\ninspirowane\nrzeczywistością",
+					"Umożliwiają one edukatorom skuteczne prowadzenie zajęć rozwijających kompetencje kryzysowe oraz odporność psychiczną młodzieży.",
+					`Zagrożenia, których coraz częściej doświadczamy, wymagają specjalnego przygotowania. 
+				Scenariusze zajęć zostały opracowane przez nauczycieli, w tym nauczycieli EDB dodatkowo 
+				materiały konsultowane były z edukatorami, funkcjonariuszami policji, oficerami formacji 
+				specjalnych, żołnierzami, funkcjonariuszami straży granicznej, specjalistami straży pożarnej, 
+				psychologami, uczestnikami misji pokojowych ONZ i misji humanitarnych, a także ekspertami obrony 
+				cywilnej.Unikalnym aspektem projektu jest zaangażowanie uczniów jako konsultantów, recenzentów i 
+				uczestników pilotaży. Materiały były dodatkowo konsultowane w środowiskach edukacyjnych na Ukrainie i Litwie. 
+				W procesie ich tworzenia czerpano z doświadczeń estońskich, litewskich, ukraińskich, fińskich, amerykańskich 
+				i australijskich. Efektem są gotowe, kompleksowe materiały dydaktyczne podzielone na trzy moduły, 
+				dostosowane do współczesnych zagrożeń. `)
+				<img src="./static/images/photo_2.png" class="w-full min-w-full max-w-full"/>
+			</div>
+		</body>
+	</html>
+}

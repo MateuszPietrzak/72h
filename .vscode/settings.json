@@ -4,7 +4,8 @@
         "editor.defaultFormatter": "a-h.templ"
     },
     "tailwindCSS.includeLanguages": {
-        "templ": "html"
+        "templ": "html",
+        "go": "html"
     },
     "[yaml]": {
         "editor.tabSize": 2,

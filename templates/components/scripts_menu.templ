@@ -1,0 +1,131 @@
+package components
+
+type menuArg struct {
+	Text string
+	Href string
+}
+
+templ menuEntry(title string, items []menuArg) {
+	<div class="module-element">
+		<button class="toggle-button cursor-pointer text-xl w-full hover:bg-white hover:text-black flex flex-row justify-between gap-5 font-header font-semibold p-2">
+			<span>
+				{ title }
+			</span>
+			<span>
+				<i class="chevron-icon fa-solid fa-chevron-down fa-md"></i>
+			</span>
+		</button>
+		<div class="expanded-content">
+			<ul>
+				for _, item := range items {
+					<a href={ item.Href }>
+						<li class="ml-6 text-lg hover:bg-white hover:text-black p-1">
+							{ item.Text }
+						</li>
+					</a>
+				}
+			</ul>
+		</div>
+	</div>
+}
+
+templ ScriptsMenu() {
+	<div class="absolute ml-6 mt-6 bg-black p-4">
+		<button
+			id="contentHidden"
+			class="text-white bg-black p-4 hover:text-black hover:bg-white cursor-pointer"
+			style="display: none"
+			onClick="toggleVisibility()"
+		>
+			<i class="fa-solid fa-chevron-right fa-xl"></i>
+		</button>
+		<div
+			id="contentShown"
+			class="text-white flex flex-col gap-8"
+			style="display: block"
+		>
+			<div class="flex flex-row justify-between">
+				<span
+					class="p-4 text-2xl font-semibold font-header"
+				>
+					MODUŁY
+				</span>
+				<button
+					class="p-4 hover:text-black hover:bg-white cursor-pointer"
+					onClick="toggleVisibility()"
+				>
+					<i class="fa-solid fa-xmark fa-xl"></i>
+				</button>
+			</div>
+			@menuEntry("ZARZĄDZANIE STRESEM", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("BUDOWANIE ZESPOŁU", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("BEZPIECZEŃSTWO INFORMACJI", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("DZIAŁANIE W KRYZYSIE", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("WOJNA KOGNITYWNA", []menuArg{
+				{Text: "Item 1", Href: "link1"},
+				{Text: "Item 2", Href: "link2"},
+				{Text: "Item 3", Href: "link3"}})
+		</div>
+	</div>
+	<script>
+        let isShown = true;
+
+        const elemHidden = document.getElementById("contentHidden");
+        const elemShown = document.getElementById("contentShown");
+
+        function toggleVisibility() {
+            if (isShown) {
+                elemHidden.style.display = "block";
+                elemShown.style.display = "none";
+                isShown = false;
+            } else {
+                elemHidden.style.display = "none";
+                elemShown.style.display = "block";
+                isShown = true;
+            }
+        }
+
+        const moduleList = [];
+
+        document.querySelectorAll(".module-element").forEach((container, key) => {
+            const button = container.querySelector(".toggle-button");
+            const content = container.querySelector(".expanded-content");
+            const chevron = container.querySelector(".chevron-icon");
+
+            content.style.display = "none";
+
+            function toggleItems(show) {
+                content.style.display = show ? "block" : "none";
+                chevron.classList.remove(show ? "fa-chevron-down" : "fa-chevron-up");
+                chevron.classList.add(!show ? "fa-chevron-down" : "fa-chevron-up");
+            }
+            moduleList.push(toggleItems);
+
+            function onClick() {
+                for (let i = 0; i < moduleList.length; i++) {
+                    if (i === key) {
+                        moduleList[i](content.style.display === "none");
+                    } else {
+                        moduleList[i](false);
+                    }
+                }
+            }
+            button.addEventListener("click", onClick);
+        });
+
+        moduleList[0](true);
+
+    </script>
+}
