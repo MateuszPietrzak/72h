@@ -1,0 +1,205 @@
+package pages
+
+import "github.com/MateuszPietrzak/72h/templates/components"
+
+templ AboutUs() {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>72 Godziny</title>
+			@components.StyleSetup()
+		</head>
+		<body>
+			@components.Navbar()
+			@components.HeaderContentBlock("Strategia i koordynacja",
+				"O nas",
+				"72h to inicjatywa obywatelska. Na poziomie koncepcyjnym, autorskim  i konsultacyjnym współpracuje ze sobą kilkadziesiąt osób, w tym eksperci ds. operacji specjalnych i kryzysowych i młodzież",
+				"")
+			<img src="./static/images/photo_1.jpg" class="w-full min-w-full max-w-full"/>
+			<div class="flex flex-col px-64 gap-8 pb-12">
+				<p></p>
+				<h1 class="text-3xl font-bold">
+					Bardzo dziękujemy  niżej wymienionym  osobom  za wsparcie oraz wkład merytoryczny
+				</h1>
+				<ul>
+					<li>Wiesław Kosakowski - dyrektor III LO im. Marynarki Wojennej w Gdyni</li>
+					<li>Krystyna Danielecka - Wojewódzka - Prezydent Miasta Słupska</li>
+					<li>Dariusz Wiśniewski - Konsul Generalny Ambasady RP na Litwie </li>
+					<li>płk rez. Piotr Gąstał - były Dowódca Jednostki Wojskowej GROM</li>
+					<li>ppłk Artur Lillenurm - Attache Obrony w Polsce i Rumunii Ambasady Estonii w Warszawie </li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Strategia i koordynacja projektu
+				</h1>
+				<ul>
+					<li>Anna Rzepa: inicjatywa, koordynacja, strategia, prace koncepcyjne  - Pracownia Innowacji 3LAB - III LO w Gdyni, członkini: Rady Konsultacyjnej do spraw Odporności na Dezinformację Międzynarodową przy Ministrze Spraw Zagranicznych, Komisji Nauk Kosmicznych PAN,  zespołu pedagogiki medialnej przy KNP PAN</li>
+					<li>kmdr dr hab. Wojciech Sokołowski, prof. AMW Dziekan - Wydział Dowodzenia i Operacji Morskich Akademia Marynarki Wojennej</li>
+					<li>prof. dr hab. Maciej Tanaś - Badacz i dydaktyk z zakresu nowych mediów, edukacji i transformacji cyfrowej</li>
+					<li>Maja Meissner - CEO Executive Search & Leadership Development | Connector - Meissner&Partners</li>
+					<li>mjr rez. Paweł Muszyński - Jednostka Wojskowa 2305 “GROM”</li>
+					<li>Piotr Węgorek -  autor scenariuszy TechCamp, prace koncepcyjne, strategia i wykonanie makiety aplikacji, ekspert: Ochrona ludności i Obrona Cywilna, technologie wspierające działania w sytuacjach kryzysowych</li>
+					<li>Bartłomiej Przybyciel -  prace koncepcyjne nad projektem i nad aplikacją,  zarządzanie dokumentacją zewnętrzną, specjalista cyfryzacji edukacji i  administracji publicznej,analizy danych i optymalizacji procesów przepływów Urzędu Miejskiego w Sopocie.</li>
+					<li>Paweł Kudzia - b. Dyrektor działu misji zagranicznych i pomocy natychmiastowej PAH, korespondent wojenny, ekspert ESG</li>
+					<li>hm Konrad Chmiel: koordynator Tech Camp i współpracy z ZHP</li>
+					<li>Łukasz Kawalec: Dyrektor Zarządu Wykonawczego oddziału wojewódzkiego ZOSP woj. pomorskiego </li>
+					<li>phm Krystian Radziejewski: współpraca z ZHP,zespół Instruktorów specjalności Specjalności Obronnych, Inspektorat specjalny do spraw bezpieczeństwa Chorągwi Stołecznej</li>
+					<li>Aleksandra Saczuk - koordynacja współpracy z Partnerem “Fundacją PZU”</li>
+					<li>Ewa Zaborska - koordynacja współpracy z partnerem “Fundacja PZU”</li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Eksperci
+				</h1>
+				<ul>
+					<li>kmdr por.dr Tomasz Kostecki: Akademia Marynarki Wojennej - Bezpieczeństwo, ochrona i działania w sytuacjach kryzysowych</li>
+					<li>dr hab. Grzegorz Krasnodębski prof. AMW - cyberbezpieczeństwo</li>
+					<li>bryg. Leszek Tanaś - Uczestnik misji pokojowych ONZ i wypraw naukowych,  doświadczenie w akcjach ratowniczo-gaśniczych na całym świecie, zarządzanie bezpieczeństwem w sytuacjach kryzysowych</li>
+					<li>ppor.SG Straży Granicznej Patryk Pawuska - zarzadzanie bezpieczeństwem w sytuacjach kryzysowych,  dowódca SG 215 w Kaszubskim Dywizjonie Straży Granicznej</li>
+					<li>mł. insp w st. spocz. Piotr Kondrakiewicz - bezpieczeństwo publiczne </li>
+					<li>podkom. Marek Zań - Ekspert ds. sytuacji kryzysowych - Samodzielny Pododdział Kontrterrorystyczny Policji w Gdańsku</li>
+					<li>dr Adam Nawrot - Specjalista do spraw terenów oraz wypraw polarnych - Instytut Geofizyki PAN, Fundacja forScience</li>
+					<li>Przemysław Pazera - Ekspert bezpieczeństwa, trener mentalny, autor metod menedżerskich i programów rozwojowych dla sił specjalnych, uczestnik gier strategicznych i wojennych</li>
+					<li>dr Wojciech Zawadzki -  ekspert do spraw dezinformacji</li>
+					<li>Adam Labuhn - analiza prawna, wdrażanie rozwiązań rekomendowanych przez Komisję Nauk Kosmicznych PAN</li>
+					<li>dr n. med. Marta Kutniewska-Kubik - Psycholog kliniczny, Certyfikowany Psychoterapeuta Poznawczo-Behawioralny, Członek Zarządu Głównego Polskiego Towarzystwa Psychologicznego</li>
+					<li>Aneta Marczak - Psycholog</li>
+					<li>Wiktoria Sobecka - prace koncepcyjne, strategia i wykonanie makiety aplikacji, graficzka, specjalistka od UX/UI, łącząca badania, projektowanie i testy prototypu aplikacji 72h</li>
+					<li>Mateusz Dyrda - rozwiązania interaktywne, prezes zarządu w Stowarzyszeniu Robotyków SCALP</li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Edukacja, etyka i pedagogika
+				</h1>
+				<ul>
+					<li>dr prof.UŚ Hewilia Hetmańczyk -  recenzje, Wydział Nauk Społecznych Instytut Pedagogiki Uniwersytet Śląski w Katowicach. </li>
+					<li>dr Jacek Karaś - Katedra Informatyki, Wydział Zarządzania Uniwersytet Łódzki</li>
+					<li>dr Anna Czernihowska Tymoszyk - Etyka i rozwiązania interaktywne - III Liceum Ogólnokształcące Gdynia</li>
+					<li>Weronika Kubisiak -   autorka scenariuszy  i liderka procesów tworzenia scenariuszy, redaktorka opracowania - SP nr 3 w Lęborku</li>
+					<li>Magdalena Głowacka -  autorka scenariuszy - Thinking Zone w  Gdańsku</li>
+					<li>Piotr Grzebieniak - autor scenariusza - Zespół Szkól Mechanicznych w Słupsku</li>
+					<li>Rafał Juszczyk - Dyrektor SP w Pogórzu - koordynacja pilotażu</li>
+					<li>Karolina Sawicz-  konsultacje i  koordynacja pilotażu  - Liceum Ogólnokształcące nr 1 w Lęborku</li>
+					<li>Joanna Kornicka  -  konsultacje i koordynacja pilotaż Zespół Szkół nr 1 w Hrubieszowie</li>
+					<li>Krzysztof Borys - pilotaż Zespół Szkół nr 1 w Hrubieszowie</li>
+					<li>Mariusz Filimoniak - konsultacje i koordynacja pilotażu Zespół Szkół Ogólnokształcących w Słupsku</li>
+					<li>Dorota Pawlonka - Szymkowiak - koordynacja pilotażu Liceum Ogólnokształcące nr 2 w Szczecinie</li>
+					<li>Małgorzata Olszowa - Edukacja dla Bezpieczeństwa - III LO Gdynia</li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Placówki edukacyjne zaangażowane w pilotaże projektu:
+				</h1>
+				<h2 class="text-2xl font-bold">
+					Rama Północna:
+				</h2>
+				<ul>
+					<li>III LO im. Marynarki Wojennej w Gdyni</li>
+					<li>Thinking Zone w Gdańsku</li>
+					<li>SP w Pogórzu</li>
+					<li>LO nr 1  w Lęborku</li>
+					<li>SP nr 3 im.Polskich Olimpijczyków w Lęborku</li>
+					<li>Zespół Szkół Ogólnokształcących w Słupsku</li>
+					<li>Zespół Szkól Mechanicznych w Słupsku</li>
+					<li>LO nr 2 w Szczecinie</li>
+				</ul>
+				<h2 class="text-2xl font-bold">
+					Ściana wschodnia:
+				</h2>
+				<ul>
+					<li>Zespół Szkół nr 1 w Hrubieszowie </li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Uczniowie i uczennice
+				</h1>
+				<h2 class="text-2xl font-bold">
+					III LO w Gdyni
+				</h2>
+				<ul>
+					<li>Zuzanna Kizielewicz -  liderka, prace koncepcyjne,spotkania robocze, praca nad scenariuszami, organizacja ze strony uczniowskiej, hackathon</li>
+					<li>Marianna Sobczak - prace koncepcyjne, spotkania robocze, konsultacje w s tworzenia scenariuszy</li>
+					<li>Maja Gołębska - prace koncepcyjne, konsultacje w.s tworzenia scenariuszy</li>
+					<li>Julia Madeja - prace koncepcyjne, konsultacje w.s tworzenia scenariuszy</li>
+					<li>Marianna Mikołajczak - prace koncepcyjne, przygotowywanie materiałów źródłowych, konsultacje w.s tworzenia scenariuszy </li>
+					<li>Oskar Kotela - koordynacja prac uczniowskich I etapu, prace koncepcyjne, konsultacje w.s tworzenia scenariuszy, prace związane z aplikacją, organizacja ze strony uczniowskiej </li>
+					<li>Agata Roučová - spotkania robocze, praca nad scenariuszami</li>
+					<li>Nina Ziemianowicz - spotkania robocze, praca nad scenariuszami, feedback/recenzje  </li>
+					<li>Julia Landsberg - prace koncepcyjne, feedback/recenzje  </li>
+					<li>Tymoteusz Szornak - spotkania  robocze, konsultacje w.s tworzenia scenariuszy, pomoc w stworzeniu prezentacji, feedback/recenzje, wsparcie w stworzeniu prezentacji  </li>
+					<li>Łucja Mielnik - prace koncepcyjne, spotkania robocze, konsultacje w.s tworzenia scenariuszy, feedback/recenzje, praca nad komiksem  </li>
+					<li>Karolina Bukowska - koordynacja prac uczniowskich, spotkania robocze, konsultacje w.s tworzenia scenariuszy, feedback/recenzje  </li>
+					<li>Aneta Kucharska - spotkania robocze, konsultacje w.s tworzenia scenariuszy, feeback/recenzje </li>
+					<li>Agata Dembek - prace koncepcyjne, spotkania robocze, konsultacje w.s tworzenia scenariuszy, feedback/recenzje  </li>
+					<li>Natasza Sudoł - spotkania robocze, konsultacje w.s tworzenia scenariuszy  </li>
+				</ul>
+				<h3 class="text-xl font-bold">
+					Dodatkowo: 
+				</h3>
+				<ul>
+					<li>Jakub Gawinek - przygotowywanie ankiet </li>
+					<li>Natalia Sikorska - prace koncepcyjne, hackathon </li>
+					<li>Natalia Skalska - prace koncepcyjne </li>
+				</ul>
+				<h3 class="text-xl font-bold">
+					Wojna kognitywna:
+				</h3>
+				<ul>
+					<li>Jakub Gawinek - lider </li>
+					<li>Kiara Stempień </li>
+					<li>Gaia di Marco </li>
+					<li>Robert Łagidze </li>
+					<li>Leszek Wójcik </li>
+					<li>Julia Kobylska </li>
+					<li>Natalia Sikorska </li>
+					<li>Łucja Mielnik </li>
+				</ul>
+				<h2 class="text-2xl font-bold">
+					Szkoła Thinking Zone
+				</h2>
+				<ul>
+					<li>Paulina Banacka - spotkania robocze, konsultacje w.s tworzenia scenariuszy</li>
+					<li>Alisa Shcharbinina - spotkania robocze, konsultacje w.s tworzenia scenariuszy</li>
+					<li>Mikołaj Dziemidowicz spotkania robocze, konsultacje w.s tworzenia scenariuszy, feedback/recenzje</li>
+					<li>Filip Sobotka - spotkania robocze, konsultacje w.s tworzenia scenariuszy, feedback/recenzje </li>
+					<li>Łucja Kędzior - spotkania robocze, konsultacje w.s tworzenia scenariuszy</li>
+					<li>Irena Kędzior - spotkania robocze, konsultacje w.s tworzenia scenariuszy</li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Przyjaciele:
+				</h1>
+				<ul>
+					<li>Tymon Kalinowski, XXIX Liceum im. Krzysztofa Kieślowskiego Kraków- feedback/recenzje  </li>
+					<li>Gaja Skorowska, II LO w Gdyni - feedback/recenzje</li>
+					<li>Zuzanna Grzeszewska, II LO Słupsk - feedback/recenzje </li>
+					<li>Olga Wietek, II LO w Gdyni - feedback/recenzje </li>
+					<li>Izabela Iwanicka, Zespół Szkół nr 1 im. Bolesława III Krzywoustego w Choszcznie - feedback/recenzje </li>
+					<li>Paulina Piasek, Szkoła Podstawowa Im. Obrońców Ziem Polskich w Wocławach - feedback/recenzje</li>
+					<li>Gabriela Woźniak, VIII LO Gdańsk - feedback/recenzje</li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Członkowie Koła Naukowego “PAIDAGOGOS” Uniwersytetu Śląskiego w Katowicach:
+				</h1>
+				<ul>
+					<li>Bartosik Bożena</li>
+					<li>Biegun Karolina</li>
+					<li>Gryga Patrycja</li>
+					<li>Kaczmarska Agata</li>
+					<li>Łazarska Magdalena</li>
+					<li>Michałek Patryk</li>
+					<li>Sot Agnieszka</li>
+				</ul>
+				<h1 class="text-3xl font-bold">
+					Prace kreatywne:
+				</h1>
+				<ul>
+					<li>Julia Jasieńska - identyfikacja wizualna, concept ART strony internetowej - Akademia Królewska, Haga</li>
+					<li>Mateusz Pietrzak -  wykonanie strony internetowej , TU Delft</li>
+					<li>Alan Soliński - concept ART</li>
+					<li>Zofia Ligier - testowanie strony</li>
+					<li>Paweł Klein - fotograf</li>
+					<li>Łukasz Machnowski - konsultacje kreatywne, student IV roku wzornictwa School of Form</li>
+				</ul>
+				<p>
+					Materiały powstały we współpracy z szerokim gronem ekspertów: naukowcami, służbami mundurowymi, psychologami, edukatorami oraz uczestnikami misji humanitarnych i pokojowych ONZ
+				</p>
+			</div>
+			@components.Footer()
+		</body>
+	</html>
+}

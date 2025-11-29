@@ -34,6 +34,7 @@ func main() {
 	http.Handle("/", templ.Handler(pages.Home()))
 	http.Handle("/scenariusze", templ.Handler(pages.ScriptsHome()))
 	http.Handle("/tech_campy", templ.Handler(pages.TechCamps()))
+	http.Handle("/o_nas", templ.Handler(pages.AboutUs()))
 
 	h := func(w http.ResponseWriter, _ *http.Request) {
 		io.WriteString(w, "Pong!")
