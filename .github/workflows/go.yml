@@ -40,11 +40,45 @@ jobs:
       run: |
         go build -v -o app -ldflags="-s -w" .
 
-    - name: Upload build artifacts
+    - name: Create zip archive
+      run: zip -r production-build.zip app static/
+
+    - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: production-build
-        path: |
-          app
-          static/
+        path: production-build.zip
         retention-days: 7
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download artifact from build
+      uses: actions/download-artifact@v4
+      with:
+        name: production-build
+
+    - name: Deploy to server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+        REMOTE_USER: ${{ secrets.SERVER_USER }}
+
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
+
+        scp production-build.zip $REMOTE_USER@$REMOTE_HOST:~/production-build.zip
+
+        ssh $REMOTE_USER@$REMOTE_HOST << EOF
+          rm app
+          rm static/ -fr
+          unzip -o production-build.zip
+          rm production-build.zip
+          sudo systemctl restart h72.service
+        EOF

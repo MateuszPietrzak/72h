@@ -11,34 +11,66 @@ templ hero() {
 			muted
 			playsinline
 			disablePictureInPicture
-			poster="./static/banner.png"
+			poster="./static/banner.jpg"
 			tabindex="-1"
 			aria-hidden
-			class="absolute top-0 z-[-10] h-full min-w-full object-cover"
+			class="absolute top-0 -z-20 h-full min-w-full object-cover"
 		>
 			<source src="./static/videos/banner.mp4" type="video/mp4"/>
 		</video>
 		<div class="h-full flex flex-col justify-center pl-32 gap-6 items-start">
-			<h2 class="text-2xl font-bold font-header text-white">{ "// 54º 30' 42.124\" N 18º 31' 58.923\" E " } </h2>
-			<h1 class="text-8xl font-semibold font-header text-white">72 godziny</h1>
-			<button class="bg-white text-black font-bold px-8 py-5 mt-3 cursor-pointer">DOWIEDZ SIĘ WIĘCEJ</button>
+			<h2 class="text-2xl font-bold font-header text-white text-shadow-lg/50">{ "// 54º 30' 42.124\" N 18º 31' 58.923\" E " } </h2>
+			<img
+				class="h-auto w-2xl drop-shadow-xl/50"
+				src="./static/images/title.svg"
+			/>
+			<a
+				class="bg-white text-black font-bold px-8 py-5 mt-3 cursor-pointer hover:bg-black hover:text-white transition-all duration-300"
+				href="#jumpto"
+			>DOWIEDZ SIĘ WIĘCEJ</a>
 		</div>
 	</div>
 }
 
 templ Home() {
 	<!DOCTYPE html>
-	<html>
+	<html class="scroll-smooth">
 		<head>
 			<title>72 Godziny</title>
 			@components.StyleSetup()
 		</head>
 		<body>
-			<div class="flex flex-col h-screen">
-				@components.Navbar()
+			@components.Navbar()
+			<div class="flex flex-col h-screen -z-10">
 				@hero()
 			</div>
-			This is text further down
+			<div id="jumpto" class="scroll-mt-40"></div>
+			<div class="flex flex-col gap-16 -my-8">
+				@components.HeaderContentBlock("Trzy filary odporności",
+					"Projekt 72 godziny\ninicjatywa obywatelska",
+					"Projekt „72h” składa się z trzech filarów: projektu aplikacji kryzysowej, scenariuszy dla edukatorów oraz Tech Campu",
+					`To nowatorska inicjatywa obywatelska, zaprojektowana z myślą o świecie pełnym niepewności, 
+				szybkich zmian i złożonych zależności. W czasach, gdy tradycyjne modele zarządzania zawodzą, 
+				stawiamy na elastyczność, scenariuszowe myślenie i odporność. Program łączy powagę sytuacji 
+				kryzysowych z dynamiką gry terenowej i interaktywnych ćwiczeń, dzięki czemu młodzież rozwija 
+				praktyczne kompetencje - od szybkiego reagowania i pracy zespołowej po radzenie sobie z emocjami 
+				w trudnych warunkach.`)
+				<img src="./static/images/landing_photo_1.jpg" class="w-full w-min-full w-max-full"/>
+				@components.HeaderContentBlock("Z kim siedzieliśmy przy stole?",
+					"Eksperci z różnych\ndziedzin",
+					`Unikalną wartością projektu jest udział uczniów - w roli konsultantów, recenzentów i testerów. 
+				To oni nadali projektowi świeżość i autentyczność.`,
+					`Materiały powstały przy współpracy z szerokim gronem ekspertów: naukowcami polskich uczelni, ekspertami obrony cywilnej, 
+				edukatorami, funkcjonariuszami policji, żołnierzami i oficerami formacji specjalnych, przedstawicielami straży granicznej i 
+				pożarnej, psychologami, uczestnikami misji humanitarnych oraz misji pokojowych ONZ.`)
+				<img src="./static/images/landing_photo_2.jpg" class="w-full w-min-full w-max-full"/>
+				@components.HeaderContentBlock("Zweryfikowane w działaniu",
+					"Międzynarodowe\ndoświadczenia",
+					`Każdy element projektu przeszedł pilotaże i ewaluację, dzięki czemu „72h” 
+				jest nie tylko dopasowany do zmieniającej się rzeczywistości, ale też sprawdzony w działaniu.`,
+					`Wszystkie materiały zostały zweryfikowane w środowiskach edukacyjnych na Ukrainie i Litwie 
+				oraz wzbogacone o praktyki z Estonii, Litwy, Ukrainy, Finlandii, USA i Australii.`)
+			</div>
 		</body>
 	</html>
 }
