@@ -1,0 +1,22 @@
+package pages
+
+import "github.com/MateuszPietrzak/72h/templates/components"
+
+templ Education() {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>72 Godziny</title>
+			@components.StyleSetup()
+		</head>
+		<body>
+			@components.Navbar()
+			<div class="flex flex-col">
+				<p>
+					Projekt "72h" stanowi kompleksowe kompendium wiedzy, stworzone z myślą o nauczycielach, psychologach, pedagogach, instruktorach ZHP, instruktorach OSP, edukatorach. Znajdujące się w pakiecie materiały i informacje zapewniają wsparcie w prowadzeniu zajęć oraz budowaniu odporności na kryzys. To realistyczne rozwiązania edukacyjne nowej generacji, które odpowiadają na wyzwania współczesnego świata.
+				</p>
+			</div>
+			@components.Footer()
+		</body>
+	</html>
+}

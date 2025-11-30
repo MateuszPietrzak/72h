@@ -1,0 +1,42 @@
+package pages
+
+import "github.com/MateuszPietrzak/72h/templates/components"
+
+templ App() {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>72 Godziny</title>
+			@components.StyleSetup()
+		</head>
+		<body>
+			@components.Navbar()
+			<div class="flex flex-col">
+				<h1>Aplikacja mobilna „72h” - współpraca z Rządowym Centrum Bezpieczeństwa i  zespołem  tworzacym mObywatel</h1>
+				<p>
+					Na bazie międzynarodowych doświadczeń oraz we współpracy z polskimi ekspertami zespół „72H” przygotował makietę aplikacji mobilnej „72h”, stworzoną z myślą o wszystkich użytkownikach smartfonów chcących podnieść swój poziom bezpieczeństwa.
+					Aplikacja ma wspierać obywateli w pierwszych 72 godzinach kryzysu – czasie kluczowym, zanim służby państwowe i lokalne w pełni rozpoczną działania.
+				</p>
+				<h2>Co oferuje aplikacja?</h2>
+				<ul>
+					<li>praktyczną wiedzę o najczęściej występujących zagrożeniach,</li>
+					<li>szybkie instrukcje udzielania pierwszej pomocy,</li>
+					<li>dostęp do wgranych map ułatwiających ewakuację (schrony, źródła wody),</li>
+					<li>pełną funkcjonalność w trybie offline – kluczową, gdy dostęp do internetu jest ograniczony.</li>
+				</ul>
+				<h2>Współpraca z instytucjami państwowymi</h2>
+				<p>
+					Prototyp aplikacji został zaprezentowany m.in. w:
+				</p>
+				<ul>
+					<li>Ministerstwie Edukacji Narodowej,</li>
+					<li>Pomorskim Urzędzie Wojewódzkim w Gdańsku, podczas spotkania z wojewodą Beatą Rutkiewicz i dyrektorem RCB Zbigniewem Muszyńskim.</li>
+				</ul>
+				<p>
+					Projekt został bardzo wysoko oceniony, a nasza makieta aplikacji przekazana zespołowi rozwijającemu aplikację mObywatel,  który zaimplementował część proponowanych przez nas rozwiązań. Zespół „72 godziny” uczestniczył również w spotkaniu roboczym w Centralnym Ośrodku Informatyki z zespołem mObywatela analizując kluczowe funkcjonalności aplikacji w module „Bezpieczeństwo”.
+				</p>
+			</div>
+			@components.Footer()
+		</body>
+	</html>
+}
