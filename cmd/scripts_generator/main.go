@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"os"
 	"path/filepath"
@@ -31,7 +32,24 @@ func create(p string) (*os.File, error) {
 
 func renderScript(path string) {
 	srcpath := filepath.Join("lesson_scripts", path, "scenariusz.md")
+	jsonpath := filepath.Join("lesson_scripts", path, "metadata.json")
 	dstpath := filepath.Join("static/scripts", path, "script.html")
+
+	var v struct {
+		Title string `json:"title"`
+	}
+
+	jsondat, err := os.ReadFile(jsonpath)
+
+	if err != nil {
+		log.Fatalf("Failed to read file: %v", err)
+	}
+
+	if err := json.Unmarshal(jsondat, &v); err != nil {
+		log.Fatalf("Failed to unmarshal JSON: %v", err)
+	}
+
+	prefix := []byte("# " + v.Title + "\n")
 
 	dat, err := os.ReadFile(srcpath)
 
@@ -39,14 +57,14 @@ func renderScript(path string) {
 		log.Fatalf("Failed to read file: %v", err)
 	}
 
-	html := mdToHTML(dat)
+	html := mdToHTML(append(prefix, dat...))
 	f, err := create(dstpath)
 
 	if err != nil {
 		log.Fatalf("Failed to create output file: %v", err)
 	}
 
-	_, err = f.Write(html) //pages.Script(string(html)).Render(context.Background(), f)
+	_, err = f.Write(html)
 	if err != nil {
 		log.Fatalf("Failed to write to the output file: %v", err)
 	}
