@@ -30,7 +30,7 @@ templ menuEntry(title string, items []menuArg) {
 }
 
 templ ScriptsMenu() {
-	<div class="absolute ml-6 mt-6 bg-black p-4">
+	<div class="fixed ml-4 mt-4 w-[22rem] w-max-[22rem] w-min-[22rem] bg-black p-4">
 		<button
 			id="contentHidden"
 			class="text-white bg-black p-4 hover:text-black hover:bg-white cursor-pointer"
@@ -57,26 +57,12 @@ templ ScriptsMenu() {
 					<i class="fa-solid fa-xmark fa-xl"></i>
 				</button>
 			</div>
-			@menuEntry("ZARZĄDZANIE STRESEM", []menuArg{
-				{Text: "Item 1", Href: "link1"},
-				{Text: "Item 2", Href: "link2"},
-				{Text: "Item 3", Href: "link3"}})
-			@menuEntry("BUDOWANIE ZESPOŁU", []menuArg{
-				{Text: "Item 1", Href: "link1"},
-				{Text: "Item 2", Href: "link2"},
-				{Text: "Item 3", Href: "link3"}})
-			@menuEntry("BEZPIECZEŃSTWO INFORMACJI", []menuArg{
-				{Text: "Item 1", Href: "link1"},
-				{Text: "Item 2", Href: "link2"},
-				{Text: "Item 3", Href: "link3"}})
-			@menuEntry("DZIAŁANIE W KRYZYSIE", []menuArg{
-				{Text: "Item 1", Href: "link1"},
-				{Text: "Item 2", Href: "link2"},
-				{Text: "Item 3", Href: "link3"}})
-			@menuEntry("WOJNA KOGNITYWNA", []menuArg{
-				{Text: "Item 1", Href: "link1"},
-				{Text: "Item 2", Href: "link2"},
-				{Text: "Item 3", Href: "link3"}})
+			@menuEntry("ZESPÓŁ W AKCJI", []menuArg{
+				{Text: "1. Budowanie zespołu", Href: "/scenariusze/1/1"},
+				{Text: "2. Komunikacja w zespole", Href: "/scenariusze/1/2"},
+				{Text: "3. Motywacja zespołu", Href: "/scenariusze/1/3"},
+				{Text: "4. Planowanie działania w zespole", Href: "/scenariusze/1/4"},
+				{Text: "5. Wybór lidera", Href: "/scenariusze/1/5"}})
 		</div>
 	</div>
 	<script>

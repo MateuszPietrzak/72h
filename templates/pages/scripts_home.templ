@@ -12,7 +12,7 @@ templ ScriptsHome() {
 		<body>
 			@components.Navbar()
 			@components.ScriptsMenu()
-			<div class="flex flex-col gap-16">
+			<div class="flex flex-col gap-16 ml-96 mr-24 shadow-2xl">
 				@components.HeaderContentBlock("Scenariusze lekcji",
 					"Scenariusze\ninspirowane\nrzeczywistością",
 					"Umożliwiają one edukatorom skuteczne prowadzenie zajęć rozwijających kompetencje kryzysowe oraz odporność psychiczną młodzieży.",
@@ -26,8 +26,9 @@ templ ScriptsHome() {
 				W procesie ich tworzenia czerpano z doświadczeń estońskich, litewskich, ukraińskich, fińskich, amerykańskich 
 				i australijskich. Efektem są gotowe, kompleksowe materiały dydaktyczne podzielone na trzy moduły, 
 				dostosowane do współczesnych zagrożeń. `)
-				<img src="./static/images/photo_2.png" class="w-full min-w-full max-w-full"/>
+				<img src="/static/images/photo_2.jpg" class="w-full min-w-full max-w-full"/>
 			</div>
+			@components.Footer()
 		</body>
 	</html>
 }

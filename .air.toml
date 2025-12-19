@@ -8,11 +8,11 @@ tmp_dir = "tmp"
 
 [build]
   bin = "./tmp/main"
-  cmd = "templ generate && go build -o ./tmp/main ."
+  cmd = "go run ./cmd/scripts_generator && templ generate && go build -o ./tmp/main ."
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor"]
   exclude_file = []
-  exclude_regex = [".*_templ.go"]
+  exclude_regex = [".*_templ.go", ".*.html"]
   exclude_unchanged = false
   follow_symlink = false
   full_bin = ""

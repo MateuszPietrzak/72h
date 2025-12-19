@@ -22,13 +22,13 @@ templ Navbar() {
 	<div class="flex flex-row justify-between w-full px-8 py-4 bg-white items-center sticky top-0 z-50">
 		<a href="/" class="cursor-pointer">
 			<img
-				src="./static/images/logo_navbar.svg"
+				src="/static/images/logo_navbar.svg"
 				class="w-auto h-10"
 			/>
 		</a>
 		<div class="flex flex-row font-bold gap-16 items-center">
-			@navbarButton("Aplikacja", "/")
-			@navbarButton("Edukacja", "/")
+			@navbarButton("Aplikacja", "/aplikacja")
+			@navbarButton("Wojna kognitywna", "/wojna_kognitywna")
 			@navbarButton("Tech Campy", "/tech_campy")
 			@navbarButtonFancy("SCENARIUSZE", "/scenariusze")
 		</div>
