@@ -40,6 +40,10 @@ jobs:
       run: |
         go build -v -o app -ldflags="-s -w" .
 
+    - name: Build scripts
+      run: |
+        go run ./cmd/scripts_generator
+
     - name: Create zip archive
       run: zip -r production-build.zip app static/
 
