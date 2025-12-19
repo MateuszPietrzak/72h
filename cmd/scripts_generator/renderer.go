@@ -10,7 +10,7 @@ import (
 
 func renderParagraph(w io.Writer, p *ast.Paragraph, entering bool) {
 	if entering {
-		io.WriteString(w, `<p class="text-lime-500">`)
+		io.WriteString(w, `<p>`)
 	} else {
 		io.WriteString(w, `</p>`)
 	}
@@ -18,7 +18,7 @@ func renderParagraph(w io.Writer, p *ast.Paragraph, entering bool) {
 
 func renderHeader(w io.Writer, h *ast.Heading, entering bool) {
 	if entering {
-		str := fmt.Sprintf(`<h%d class="text-t-pink">`, h.Level)
+		str := fmt.Sprintf(`<h%d class="text-[60px] font-bold">`, h.Level)
 		io.WriteString(w, str)
 	} else {
 		str := fmt.Sprintf(`</h%d>`, h.Level)

@@ -11,18 +11,18 @@ templ hero() {
 			muted
 			playsinline
 			disablePictureInPicture
-			poster="./static/banner.jpg"
+			poster="/static/banner.jpg"
 			tabindex="-1"
 			aria-hidden
 			class="absolute top-0 -z-20 h-full min-w-full object-cover"
 		>
-			<source src="./static/videos/banner.mp4" type="video/mp4"/>
+			<source src="/static/videos/banner.mp4" type="video/mp4"/>
 		</video>
 		<div class="h-full flex flex-col justify-center pl-32 gap-6 items-start">
 			<h2 class="text-2xl font-bold font-header text-white text-shadow-lg/50">{ "// 54º 30' 42.124\" N 18º 31' 58.923\" E " } </h2>
 			<img
 				class="h-auto w-2xl drop-shadow-xl/50"
-				src="./static/images/title.svg"
+				src="/static/images/title.svg"
 			/>
 			<a
 				class="bg-white text-black font-bold px-8 py-5 mt-3 cursor-pointer hover:bg-black hover:text-white transition-all duration-300"
@@ -55,7 +55,7 @@ templ Home() {
 				kryzysowych z dynamiką gry terenowej i interaktywnych ćwiczeń, dzięki czemu młodzież rozwija 
 				praktyczne kompetencje - od szybkiego reagowania i pracy zespołowej po radzenie sobie z emocjami 
 				w trudnych warunkach.`)
-				<img src="./static/images/landing_photo_1.jpg" class="w-full w-min-full w-max-full"/>
+				<img src="/static/images/landing_photo_1.jpg" class="w-full w-min-full w-max-full"/>
 				@components.HeaderContentBlock("Z kim siedzieliśmy przy stole?",
 					"Eksperci z różnych\ndziedzin",
 					`Unikalną wartością projektu jest udział uczniów - w roli konsultantów, recenzentów i testerów. 
@@ -63,7 +63,7 @@ templ Home() {
 					`Materiały powstały przy współpracy z szerokim gronem ekspertów: naukowcami polskich uczelni, ekspertami obrony cywilnej, 
 				edukatorami, funkcjonariuszami policji, żołnierzami i oficerami formacji specjalnych, przedstawicielami straży granicznej i 
 				pożarnej, psychologami, uczestnikami misji humanitarnych oraz misji pokojowych ONZ.`)
-				<img src="./static/images/landing_photo_2.jpg" class="w-full w-min-full w-max-full"/>
+				<img src="/static/images/landing_photo_2.jpg" class="w-full w-min-full w-max-full"/>
 				@components.HeaderContentBlock("Zweryfikowane w działaniu",
 					"Międzynarodowe\ndoświadczenia",
 					`Każdy element projektu przeszedł pilotaże i ewaluację, dzięki czemu „72h” 

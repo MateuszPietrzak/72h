@@ -11,7 +11,10 @@ templ Script(child string) {
 		</head>
 		<body>
 			@components.Navbar()
-			@templ.Raw(child)
+			@components.ScriptsMenu()
+			<div>
+				@templ.Raw(child)
+			</div>
 		</body>
 	</html>
 }
