@@ -46,7 +46,7 @@ func main() {
 	http.Handle("/scenariusze", templ.Handler(pages.ScriptsHome()))
 	http.Handle("/tech_campy", templ.Handler(pages.TechCamps()))
 	http.Handle("/aplikacja", templ.Handler(pages.App()))
-	http.Handle("/edukacja", templ.Handler(pages.Education()))
+	http.Handle("/wojna_kognitywna", templ.Handler(pages.CognitiveWar()))
 	http.Handle("/o_nas", templ.Handler(pages.AboutUs()))
 
 	http.Handle("/scenariusze/1/1", templ.Handler(pages.Script(staticScript("Moduł 1 - Zespół w akcji/1. Budowanie zespołu"))))
