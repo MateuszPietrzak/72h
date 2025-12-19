@@ -45,31 +45,33 @@ templ Home() {
 				@hero()
 			</div>
 			<div id="jumpto" class="scroll-mt-40"></div>
-			<div class="flex flex-col gap-16 -my-8 mb-16">
-				@components.HeaderContentBlock("Trzy filary odporności",
-					"Projekt 72 godziny\ninicjatywa obywatelska",
-					"Projekt „72h” składa się z trzech filarów: projektu aplikacji kryzysowej, scenariuszy dla edukatorów oraz Tech Campu",
-					`To nowatorska inicjatywa obywatelska, zaprojektowana z myślą o świecie pełnym niepewności, 
+			<div>
+				<div class="flex flex-col gap-16 -my-23 pt-8 pb-16 mx-60 bg-white shadow-2xl">
+					@components.HeaderContentBlock("Inicjatywa obywatelska",
+						"Projekt\n72 godziny",
+						"Projekt „72h” składa się z trzech filarów: projektu aplikacji kryzysowej, scenariuszy dla edukatorów oraz Tech Campu",
+						`To nowatorska inicjatywa obywatelska, zaprojektowana z myślą o świecie pełnym niepewności, 
 				szybkich zmian i złożonych zależności. W czasach, gdy tradycyjne modele zarządzania zawodzą, 
 				stawiamy na elastyczność, scenariuszowe myślenie i odporność. Program łączy powagę sytuacji 
 				kryzysowych z dynamiką gry terenowej i interaktywnych ćwiczeń, dzięki czemu młodzież rozwija 
 				praktyczne kompetencje - od szybkiego reagowania i pracy zespołowej po radzenie sobie z emocjami 
 				w trudnych warunkach.`)
-				<img src="/static/images/landing_photo_1.jpg" class="w-full w-min-full w-max-full"/>
-				@components.HeaderContentBlock("Z kim siedzieliśmy przy stole?",
-					"Eksperci z różnych\ndziedzin",
-					`Unikalną wartością projektu jest udział uczniów - w roli konsultantów, recenzentów i testerów. 
+					<img src="/static/images/landing_photo_1.jpg" class="w-full w-min-full w-max-full"/>
+					@components.HeaderContentBlock("Z kim siedzieliśmy przy stole?",
+						"Eksperci z różnych\ndziedzin",
+						`Unikalną wartością projektu jest udział uczniów - w roli konsultantów, recenzentów i testerów. 
 				To oni nadali projektowi świeżość i autentyczność.`,
-					`Materiały powstały przy współpracy z szerokim gronem ekspertów: naukowcami polskich uczelni, ekspertami obrony cywilnej, 
+						`Materiały powstały przy współpracy z szerokim gronem ekspertów: naukowcami polskich uczelni, ekspertami obrony cywilnej, 
 				edukatorami, funkcjonariuszami policji, żołnierzami i oficerami formacji specjalnych, przedstawicielami straży granicznej i 
 				pożarnej, psychologami, uczestnikami misji humanitarnych oraz misji pokojowych ONZ.`)
-				<img src="/static/images/landing_photo_2.jpg" class="w-full w-min-full w-max-full"/>
-				@components.HeaderContentBlock("Zweryfikowane w działaniu",
-					"Międzynarodowe\ndoświadczenia",
-					`Każdy element projektu przeszedł pilotaże i ewaluację, dzięki czemu „72h” 
+					<img src="/static/images/landing_photo_2.jpg" class="w-full w-min-full w-max-full"/>
+					@components.HeaderContentBlock("Zweryfikowane w działaniu",
+						"Międzynarodowe\ndoświadczenia",
+						`Każdy element projektu przeszedł pilotaże i ewaluację, dzięki czemu „72h” 
 				jest nie tylko dopasowany do zmieniającej się rzeczywistości, ale też sprawdzony w działaniu.`,
-					`Wszystkie materiały zostały zweryfikowane w środowiskach edukacyjnych na Ukrainie i Litwie 
+						`Wszystkie materiały zostały zweryfikowane w środowiskach edukacyjnych na Ukrainie i Litwie 
 				oraz wzbogacone o praktyki z Estonii, Litwy, Ukrainy, Finlandii, USA i Australii.`)
+				</div>
 			</div>
 			@components.Footer()
 		</body>
