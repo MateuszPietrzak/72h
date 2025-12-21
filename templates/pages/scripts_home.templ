@@ -12,7 +12,7 @@ templ ScriptsHome() {
 		<body>
 			@components.Navbar()
 			@components.ScriptsMenu()
-			<div class="flex flex-col gap-16 ml-96 mr-24 shadow-2xl">
+			<div class="flex flex-col gap-16 ml-96 mr-24 shadow-2xl pb-8">
 				@components.HeaderContentBlock("Scenariusze lekcji",
 					"Scenariusze\ninspirowane\nrzeczywistością",
 					"Umożliwiają one edukatorom skuteczne prowadzenie zajęć rozwijających kompetencje kryzysowe oraz odporność psychiczną młodzieży.",
@@ -21,12 +21,16 @@ templ ScriptsHome() {
 				materiały konsultowane były z edukatorami, funkcjonariuszami policji, oficerami formacji 
 				specjalnych, żołnierzami, funkcjonariuszami straży granicznej, specjalistami straży pożarnej, 
 				psychologami, uczestnikami misji pokojowych ONZ i misji humanitarnych, a także ekspertami obrony 
-				cywilnej.Unikalnym aspektem projektu jest zaangażowanie uczniów jako konsultantów, recenzentów i 
-				uczestników pilotaży. Materiały były dodatkowo konsultowane w środowiskach edukacyjnych na Ukrainie i Litwie. 
-				W procesie ich tworzenia czerpano z doświadczeń estońskich, litewskich, ukraińskich, fińskich, amerykańskich 
-				i australijskich. Efektem są gotowe, kompleksowe materiały dydaktyczne podzielone na trzy moduły, 
-				dostosowane do współczesnych zagrożeń. `)
-				<img src="/static/images/photo_2.jpg" class="w-full min-w-full max-w-full"/>
+				cywilnej. `)
+				<div class="px-[10%]">
+					<p class="ml-4 text-lg mb-4">
+						Unikalnym aspektem projektu jest zaangażowanie uczniów jako konsultantów, recenzentów i 
+						uczestników pilotaży. Materiały były dodatkowo konsultowane w środowiskach edukacyjnych na Ukrainie i Litwie. 
+						W procesie ich tworzenia czerpano z doświadczeń estońskich, litewskich, ukraińskich, fińskich, amerykańskich 
+						i australijskich. Efektem są gotowe, kompleksowe materiały dydaktyczne podzielone na trzy moduły, 
+						dostosowane do współczesnych zagrożeń.
+					</p>
+				</div>
 			</div>
 			@components.Footer()
 		</body>
