@@ -31,6 +31,10 @@ jobs:
     
     - name: Generate templ files
       run: templ generate
+
+    - name: Build scripts
+      run: |
+        go run ./cmd/scripts_generator
     
     - name: Build production CSS
       run: |
@@ -39,10 +43,6 @@ jobs:
     - name: Build Go binary
       run: |
         go build -v -o app -ldflags="-s -w" .
-
-    - name: Build scripts
-      run: |
-        go run ./cmd/scripts_generator
 
     - name: Create zip archive
       run: zip -r production-build.zip app static/
